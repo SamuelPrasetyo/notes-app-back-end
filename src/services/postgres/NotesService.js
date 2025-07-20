@@ -12,14 +12,14 @@ class NotesService {
   /*
    * Function Create Note
    */
-  async addNote({ title, body, text }) {
+  async addNote({ title, body, tags }) {
     const id = nanoid(16);
     const createdAt = new Date().toISOString();
     const updatedAt = createdAt;
 
     const query = {
       text: 'INSERT INTO notes VALUES($1, $2, $3, $4, $5, $6) RETURNING id',
-      values: [id, title, body, text, createdAt, updatedAt],
+      values: [id, title, body, tags, createdAt, updatedAt],
     };
 
     const result = await this._pool.query(query);
@@ -60,7 +60,7 @@ class NotesService {
   /* 
    * Function Edit Note
    */
-  async editNoteById(id, { title, body, text }) {
+  async editNoteById(id, { title, body, tags }) {
     const updatedAt = new Date().toISOString();
     const query = {
       text: 'UPDATE notes SET title = $1, body = $2, tags = $3, updated_at = $4 WHERE id = $5 RETURNING id',
