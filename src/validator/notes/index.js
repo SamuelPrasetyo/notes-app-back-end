@@ -9,6 +9,6 @@ const NotesValidator = {
       throw new InvariantError(validationResult.error.message);
     }
   }
-}
+};
 
 module.exports = NotesValidator;

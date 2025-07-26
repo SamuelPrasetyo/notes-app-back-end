@@ -1,8 +1,6 @@
-import { password } from "pg/lib/defaults";
+exports.shorthands = undefined;
 
-export const shorthands = undefined;
-
-export const up = (pgm) => {
+exports.up = (pgm) => {
   pgm.createTable('users', {
     id: {
       type: 'VARCHAR(50)',
@@ -20,10 +18,10 @@ export const up = (pgm) => {
     fullname: {
       type: 'TEXT',
       notNull: true,
-    },
+    }
   });
 };
 
-export const down = (pgm) => {
+exports.down = (pgm) => {
   pgm.dropTable('users');
 };

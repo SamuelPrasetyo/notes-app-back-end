@@ -39,7 +39,7 @@ class NotesService {
     return result.rows.map(mapDBToModel);
   }
 
-  /* 
+  /*
    * Function Read Note by ID
    */
   async getNoteById(id) {
@@ -57,7 +57,7 @@ class NotesService {
     return result.rows.map(mapDBToModel)[0];
   }
 
-  /* 
+  /*
    * Function Edit Note
    */
   async editNoteById(id, { title, body, tags }) {
