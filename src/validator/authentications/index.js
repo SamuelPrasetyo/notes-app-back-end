@@ -6,7 +6,7 @@ const {
 const InvariantError = require('../../exceptions/InvariantError');
 
 const AuthenticationsValidator = {
-  validatePostAuthenticatonPayload: (payload) => {
+  validatePostAuthenticationPayload: (payload) => {
     const validationResult = PostAuthenticationPayloadSchema.validate(payload);
     if (validationResult.error) {
       throw new InvariantError(validationResult.error.message);
