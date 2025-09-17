@@ -49,10 +49,10 @@ const init = async () => {
   const storageService = new StorageService(path.resolve(__dirname, 'api/uploads/file/images'));
 
   const server = Hapi.server({
-    port: process.env.PORT,
-    host: process.env.HOST,
-    // port: 5000,
-    // host: process.env.NODE_ENV !== 'production' ? 'localhost' : '0.0.0.0',
+    // port: process.env.PORT,
+    // host: process.env.HOST,
+    port: 3000,
+    host: process.env.NODE_ENV !== 'production' ? 'localhost' : '0.0.0.0',
     routes: {
       cors: {
         origin: ['*'],
